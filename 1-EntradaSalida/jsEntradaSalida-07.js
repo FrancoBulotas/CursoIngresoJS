@@ -10,10 +10,10 @@ function sumar()
 	var numUno;
 	var numDos;
 
-	numUno=parseInt(txtIdNumeroUno.value);
-	numDos=parseInt(txtIdNumeroDos.value)
+	numUno = parseInt(txtIdNumeroUno.value);
+	numDos = parseInt(txtIdNumeroDos.value)
 
-	alert("La suma es "+(numUno+numDos))
+	alert("La suma es "+ (numUno+numDos))
 }
 
 function restar()
@@ -21,10 +21,10 @@ function restar()
 	var numUno;
 	var numDos;
 
-	numUno=parseInt(txtIdNumeroUno.value);
-	numDos=parseInt(txtIdNumeroDos.value)
+	numUno = parseInt(txtIdNumeroUno.value);
+	numDos = parseInt(txtIdNumeroDos.value)
 
-	alert("La resta es "+(numUno-numDos))
+	alert("La resta es "+ (numUno-numDos))
 }
 
 function multiplicar()
@@ -32,10 +32,10 @@ function multiplicar()
 	var numUno;
 	var numDos;
 
-	numUno=parseInt(txtIdNumeroUno.value);
-	numDos=parseInt(txtIdNumeroDos.value)
+	numUno = parseInt(txtIdNumeroUno.value);
+	numDos = parseInt(txtIdNumeroDos.value)
 
-	alert("La multiplicación es "+(numUno*numDos))
+	alert("La multiplicación es "+ (numUno*numDos))
 }
 
 function dividir()
@@ -43,10 +43,10 @@ function dividir()
 	var numUno;
 	var numDos;
 
-	numUno=parseInt(txtIdNumeroUno.value);
-	numDos=parseInt(txtIdNumeroDos.value)
+	numUno = parseInt(txtIdNumeroUno.value);
+	numDos = parseInt(txtIdNumeroDos.value)
 
-	alert("La división es "+(numUno/numDos))
+	alert("La división es "+ (numUno/numDos))
 }
 
 
