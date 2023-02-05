@@ -4,6 +4,11 @@ function mostrar()
 	var personaActual = [];
 	var solterosEdades = [];
 	var temps = [];
+	var nombre = "";
+	var edad = 0;
+	var estadoCivil = "";
+	var sexo = "";
+	var temperatura = 0;
 	var mayoresViudos = 0;
 	var hombresViudos = 0;
 	var hombresSolteros = 0;
@@ -11,16 +16,20 @@ function mostrar()
 	var sumaEdad = 0;
 	var promedioEdades = 0;
 	var maximoTemps = 0;
+	var nombrePersonaMayorTemp = "";
+	var cantidadSolteros = 0;
 
 	respuesta = prompt("Desea ingresar datos? S/N");
 
 	while(respuesta == "S"){
+		personaActual = [];
+
 		nombre = prompt("Cual es tu nombre?");
 		personaActual.push(nombre);
 
 
 		edad = prompt("Cual es tu edad?");
-		parseInt(edad);
+		edad = parseInt(edad);
 		personaActual.push(edad);
 	
 
@@ -47,22 +56,16 @@ function mostrar()
 		personaActual.push(estadoCivil);
 
 
-		temperatura=prompt("Cual es tu temperatura?");
-		parseInt(temperatura);
+		temperatura = prompt("Cual es tu temperatura?");
+		temperatura = parseInt(temperatura);
 		personaActual.push(temperatura);	
 		temps.push(temperatura);
 
 
 		if(sexo=="M" && estadoCivil=="soltero"){
-			parseInt(solterosEdades.push(edad));
+			sumaEdad = sumaEdad + edad;
+			cantidadSolteros = cantidadSolteros + 1;
 		}
-
-		for(i=0 ; i<(solterosEdades.length) ; i++){
-			sumaEdad = sumaEdad + solterosEdades[i];
-			promedioEdades = sumaEdad/(solterosEdades.length);
-		}
-
-
 		if(edad > 60 && temperatura > 38){
 			tercerEdadTemp=tercerEdadTemp+1;
 		}
@@ -70,9 +73,13 @@ function mostrar()
 
 		personasTotalesEnAvion.push(personaActual);
 
-		respuesta=prompt("Hay mas pasajeros? S/N");
+		respuesta = prompt("Hay mas pasajeros? S/N");
 	}
 
+
+	promedioEdades = sumaEdad / cantidadSolteros;
+	
+	
 	maximoTemps = Math.max(...temps);
 
 	for (i=0 ; i < (personasTotalesEnAvion.length) ; i++){
@@ -81,10 +88,13 @@ function mostrar()
 		}
 	}
 
+
 	alert(personasTotalesEnAvion);
+	alert("La temp maxima es " + maximoTemps);
 	alert("La persona con mayor temperatura es "+ nombrePersonaMayorTemp);
-	alert("La cantidad de mayores de edad que estan viudos es de: "+mayoresViudos);
-	alert("La cantidad de hombres que estan solteros es de: "+hombresSolteros+", y la cantidad de hombres viudos: "+hombresViudos)
-	alert("La cantidad de personas de tercera edad (mas de 60) que tienen mas de 38 de temp es de: "+tercerEdadTemp)
-	alert("El promedio de edad entre hombres solteros es " + promedioEdades + " años")
+	alert("La cantidad de mayores de edad que estan viudos es de "+ mayoresViudos);
+	alert("La cantidad de hombres que estan solteros es de "+ hombresSolteros+", y la cantidad de hombres viudos "+hombresViudos)
+	alert("La cantidad de personas de tercera edad (mas de 60) que tienen mas de 38 de temp es de "+ tercerEdadTemp)
+	alert(sumaEdad);
+	alert("El promedio de edad entre hombres solteros es " + promedioEdades.toFixed(2) + " años")
 }

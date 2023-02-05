@@ -12,7 +12,7 @@ function Rectangulo ()
     largoTerreno = parseInt(txtIdLargo.value);
     anchoTerreno = parseInt(txtIdAncho.value);
 
-    alert("La cantidad de alambre a comprar es de " + (largoTerreno *2 + anchoTerreno *2) + " metros.")
+    alert("La cantidad de alambre a comprar es de " + (largoTerreno *2 + anchoTerreno *2)*2 + " metros.")
 
 }
 function Circulo () 
