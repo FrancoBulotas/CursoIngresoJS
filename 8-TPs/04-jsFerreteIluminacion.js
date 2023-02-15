@@ -10,5 +10,91 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+    var cantidadLamparas;
+    var marca;
+    var precioDescuento;
+    var precioInicial;
+    var mensaje;
+    var precioTotalDescuento;
+    var precioConImpuesto;
+
+
+    cantidadLamparas = document.getElementById("txtIdCantidad").value;
+    cantidadLamparas = parseInt(cantidadLamparas);
+
+    marca = document.getElementById("Marca").value;
+
+    precioInicial = 35;        
+
+    // Punto A
+    if(cantidadLamparas >= 6){
+        precioDescuento = precioInicial * 0.5;
+        mensaje = "Precio final con 50% de descuento $";
+        precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
+        txtIdprecioDescuento.value = mensaje + precioTotalDescuento;
+        
+    } else {
+        //Punto B
+        if(cantidadLamparas == 5 && marca == "ArgentinaLuz"){
+            precioDescuento = precioInicial * 0.6;
+            mensaje = "Precio final con 40% de descuento $";
+            precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
+            txtIdprecioDescuento.value = mensaje + precioTotalDescuento
+            ;
+
+        }else if(cantidadLamparas == 5 && marca != "Argentina Luz"){
+            precioDescuento = precioInicial * 0.7;
+            mensaje = "Precio final con 30% de descuento $";
+            precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
+            txtIdprecioDescuento.value = mensaje + precioTotalDescuento
+            ;
+
+        } else {
+            //Punto C   
+            if(cantidadLamparas == 4 && (marca == "ArgentinaLuz" || marca == "FelipeLamparas")){
+                precioDescuento = precioInicial * 0.75;
+                mensaje = "Precio final con 25% de descuento $";
+                precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
+                txtIdprecioDescuento.value = mensaje + precioTotalDescuento
+                ;
+
+            }else if(cantidadLamparas == 4 && marca != "ArgentinaLuz" && marca != "FelipeLamparas"){
+                precioDescuento = precioInicial * 0.8;
+                mensaje = "Precio final con 20% de descuento $";
+                precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
+                txtIdprecioDescuento.value = mensaje + precioTotalDescuento
+                ;
+
+            } else {
+                    //Punto D 
+                    if(cantidadLamparas == 3 && marca == "ArgentinaLuz"){
+                        precioDescuento = precioInicial * 0.85;
+                        mensaje = "Precio final con 15% de descuento $";
+                        precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
+                        txtIdprecioDescuento.value = mensaje + precioTotalDescuento
+                        ;
+
+                    }else if(cantidadLamparas == 3 && marca == "FelipeLamparas"){
+                        precioDescuento = precioInicial * 0.90;
+                        mensaje = "Precio final con 10% de descuento $";
+                        precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
+                        txtIdprecioDescuento.value = mensaje + precioTotalDescuento
+                        ;
+
+                    }else if(cantidadLamparas == 3 && (marca != "ArgentinaLuz" || marca == "FelipeLamparas")){
+                        precioDescuento = precioInicial * 0.95;
+                        mensaje = "Precio final con 5% de descuento $";
+                        precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
+                        txtIdprecioDescuento.value = mensaje + precioTotalDescuento
+                        ;
+
+                    }
+                }
+            }   
+        }       
+        //Punto E
+        if(precioTotalDescuento > 120){
+            precioConImpuesto = precioTotalDescuento * 1.10;
+            alert("IIBB Usted pagó un 10% de ingresos brutos por lo que el total es $" + precioConImpuesto.toFixed(2));
+        }
 }
