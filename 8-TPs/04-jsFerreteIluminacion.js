@@ -32,62 +32,59 @@ function CalcularPrecio ()
         mensaje = "Precio final con 50% de descuento $";
         precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
         txtIdprecioDescuento.value = mensaje + precioTotalDescuento;
-        
-    } else {
+    }
+    else{
         //Punto B
         if(cantidadLamparas == 5 && marca == "ArgentinaLuz"){
             precioDescuento = precioInicial * 0.6;
             mensaje = "Precio final con 40% de descuento $";
             precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
-            txtIdprecioDescuento.value = mensaje + precioTotalDescuento
-            ;
-
-        }else if(cantidadLamparas == 5 && marca != "Argentina Luz"){
+            txtIdprecioDescuento.value = mensaje + precioTotalDescuento;
+        }
+        else if(cantidadLamparas == 5 && marca != "Argentina Luz"){
             precioDescuento = precioInicial * 0.7;
             mensaje = "Precio final con 30% de descuento $";
             precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
-            txtIdprecioDescuento.value = mensaje + precioTotalDescuento
-            ;
-
-        } else {
+            txtIdprecioDescuento.value = mensaje + precioTotalDescuento;
+        }
+        else{
             //Punto C   
             if(cantidadLamparas == 4 && (marca == "ArgentinaLuz" || marca == "FelipeLamparas")){
                 precioDescuento = precioInicial * 0.75;
                 mensaje = "Precio final con 25% de descuento $";
                 precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
-                txtIdprecioDescuento.value = mensaje + precioTotalDescuento
-                ;
-
-            }else if(cantidadLamparas == 4 && marca != "ArgentinaLuz" && marca != "FelipeLamparas"){
+                txtIdprecioDescuento.value = mensaje + precioTotalDescuento;
+            }
+            else if(cantidadLamparas == 4 && marca != "ArgentinaLuz" && marca != "FelipeLamparas"){
                 precioDescuento = precioInicial * 0.8;
                 mensaje = "Precio final con 20% de descuento $";
                 precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
-                txtIdprecioDescuento.value = mensaje + precioTotalDescuento
-                ;
-
-            } else {
+                txtIdprecioDescuento.value = mensaje + precioTotalDescuento;
+            }
+            else{
                     //Punto D 
                     if(cantidadLamparas == 3 && marca == "ArgentinaLuz"){
                         precioDescuento = precioInicial * 0.85;
                         mensaje = "Precio final con 15% de descuento $";
                         precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
-                        txtIdprecioDescuento.value = mensaje + precioTotalDescuento
-                        ;
-
-                    }else if(cantidadLamparas == 3 && marca == "FelipeLamparas"){
+                        txtIdprecioDescuento.value = mensaje + precioTotalDescuento;
+                    }
+                    else if(cantidadLamparas == 3 && marca == "FelipeLamparas"){
                         precioDescuento = precioInicial * 0.90;
                         mensaje = "Precio final con 10% de descuento $";
                         precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
-                        txtIdprecioDescuento.value = mensaje + precioTotalDescuento
-                        ;
-
-                    }else if(cantidadLamparas == 3 && (marca != "ArgentinaLuz" || marca == "FelipeLamparas")){
+                        txtIdprecioDescuento.value = mensaje + precioTotalDescuento;
+                    }
+                    else if(cantidadLamparas == 3 && (marca != "ArgentinaLuz" || marca == "FelipeLamparas")){
                         precioDescuento = precioInicial * 0.95;
                         mensaje = "Precio final con 5% de descuento $";
                         precioTotalDescuento = parseFloat(precioDescuento * cantidadLamparas).toFixed(2)
-                        txtIdprecioDescuento.value = mensaje + precioTotalDescuento
-                        ;
-
+                        txtIdprecioDescuento.value = mensaje + precioTotalDescuento;
+                    }
+                    else{
+                        mensaje = "Precio final $";
+                        precioTotalDescuento = parseFloat(precioInicial * cantidadLamparas).toFixed(2)
+                        txtIdprecioDescuento.value = mensaje + precioTotalDescuento;
                     }
                 }
             }   
